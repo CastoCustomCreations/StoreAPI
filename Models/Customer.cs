@@ -27,7 +27,5 @@ public partial class Customer
 
     public string? Password { get; set; }
 
-    public DateOnly? CreatedDate { get; set; }
-
-    public DateOnly? LastSignIn { get; set; }
+    
 }
