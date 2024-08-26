@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace StoreAPI.Models;
-
-public partial class Product
-{
-    public int Id { get; set; }
+namespace StoreAPI.Models
+  {
+  public class AddProductDTO
+    {   
 
     public string Name { get; set; } = null!;
 
@@ -40,4 +36,7 @@ public partial class Product
     public string? UnitDimensions { get; set; }
 
     public decimal? UnitCost { get; set; }
-}
+    
+
+    }
+  }

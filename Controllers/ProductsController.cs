@@ -44,7 +44,7 @@ namespace StoreAPI.Controllers
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        /* [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct(int id, Product product)
         {
             if (id != product.Id)
@@ -72,37 +72,37 @@ namespace StoreAPI.Controllers
 
             return NoContent();
         }
-
-        // POST: api/Products
+ */
+        // POST: api/Customers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+    public IActionResult AddProduct(AddProductDTO addProductDTO)
+      {
+      var ProductEntity = new Product()
         {
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
+        Name = addProductDTO.Name,
+        Price = addProductDTO.Price,
+        CatergoryId = addProductDTO.CatergoryId,
+        Description = addProductDTO.Description,
+        ImageOne = addProductDTO.ImageOne,
+        ImageTwo = addProductDTO.ImageTwo,
+        ImageThree = addProductDTO.ImageThree,
+        ImageFour = addProductDTO.ImageFour,
+        ImageFive = addProductDTO.ImageFive,
+        UnitsInStock = addProductDTO.UnitsInStock,
+        UnitsOnOrder = addProductDTO.UnitsOnOrder,
+        UnitsReorderLevel = addProductDTO.UnitsReorderLevel,
+        SupplierId = addProductDTO.SupplierId,
+        UnitsSold = addProductDTO.UnitsSold,
+        UnitWeight = addProductDTO.UnitWeight,
+        UnitDimensions = addProductDTO.UnitDimensions,
+        UnitCost = addProductDTO.UnitCost,
+        
+        };
+      _context.Products.Add(ProductEntity);
+      _context.SaveChanges();
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
-        }
-
-        // DELETE: api/Products/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool ProductExists(int id)
-        {
-            return _context.Products.Any(e => e.Id == id);
-        }
+      return Ok(ProductEntity);
+      }
     }
 }
