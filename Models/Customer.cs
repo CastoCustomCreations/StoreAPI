@@ -5,7 +5,7 @@ namespace StoreAPI.Models;
 
 public partial class Customer
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
     public string FirstName { get; set; } = null!;
 

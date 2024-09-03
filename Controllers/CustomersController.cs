@@ -25,14 +25,14 @@ namespace StoreAPI.Controllers
         [HttpGet]
         public IActionResult GetCustomers()
         {
-          var contacts = _context.Customers.ToList();
-          return Ok(contacts);
+          var customer = _context.Customers.ToList();
+          return Ok(customer);
         }   
 
         // GET: api/Customers/5
         [HttpGet]
-        [Route("{id:guid}")]
-        public IActionResult GetCustomer(Guid id)
+        [Route("{id:int}")]
+        public IActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.Find(id);
 
