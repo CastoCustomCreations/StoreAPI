@@ -7,7 +7,7 @@ namespace StoreAPI.Models
 
     public decimal Price { get; set; }
 
-    public int? CatergoryId { get; set; }
+    public int? CategoryId { get; set; }
 
     public string? Description { get; set; }
 

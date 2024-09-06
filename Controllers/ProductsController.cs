@@ -82,7 +82,7 @@ namespace StoreAPI.Controllers
         {
         Name = addProductDTO.Name,
         Price = addProductDTO.Price,
-        CategoryId = addProductDTO.CatergoryId,
+        CategoryId = addProductDTO.CategoryId,
         Description = addProductDTO.Description,
         ImageOne = addProductDTO.ImageOne,
         ImageTwo = addProductDTO.ImageTwo,

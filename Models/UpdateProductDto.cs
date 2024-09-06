@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace StoreAPI.Models;
-
-public partial class Product
+namespace StoreAPI.Models{
+    public class UpdateProductDto
 {
-    public int Id { get; set; }
-
     public string Name { get; set; } = null!;
 
     public decimal Price { get; set; }
+
     public int? CategoryId { get; set; }
 
     public string? Description { get; set; }
@@ -39,4 +34,4 @@ public partial class Product
     public string? UnitDimensions { get; set; }
 
     public decimal? UnitCost { get; set; }
-}
+}}
