@@ -15,6 +15,7 @@ namespace StoreAPI.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ContactForm> ContactForm { get; set; }
 
         // Override OnModelCreating to configure the decimal properties
         protected override void OnModelCreating(ModelBuilder modelBuilder)
